@@ -1,202 +1,166 @@
-# --------------------------------------
-# Hexo Butterfly Theme Configuration
-# If you have any questions, please refer to the documentation
-# Chinese: https://butterfly.js.org/
-# English: https://butterfly.js.org/en/
-# --------------------------------------
-
-# --------------------------------------
-# Navigation Settings
+# Navigation bar settings (导航栏设置)
+# 见 https://butterfly.js.org/posts/4aa8abbe/##导航栏设置-Navigation-bar-settings
 # --------------------------------------
 
 nav:
-  # Navigation bar logo image
-  logo:
+  logo:   /img/butterfly-icon.png  # 图片
   display_title: true
-  # Whether to fix navigation bar
-  fixed: false
+  fixed: false # 固定导航栏
 
+# Menu 目錄
 menu:
-  # Home: / || fas fa-home
-  # List||fas fa-list:
-  #   Music: /music/ || fas fa-music
-  #   Movie: /movies/ || fas fa-video
+  首页: / || fas fa-home
+  归档: /archives/ || fas fa-archivee-archive
+  标签: /tags/ || fas fa-tags
+  目录: /categories/ || fas fa-folder-opener-opens fa-folder-open
+  列表||fas fa-list:
+    音乐: /music/ || fas fa-music
+    电影: /movies/ || fas fa-video
+  友情链接: /link/ || fas fa-link
+  关于我们: /about/ || fas fa-heart
 
+# Code Blocks (代码块相关)
 # --------------------------------------
-# Code Blocks Settings
-# --------------------------------------
+highlight_theme: darker # darker / pale night / light / ocean / false
+highlight_height_limit: false # 单位：像素
+code_word_wrap: true
+# 高亮工具栏
+highlight_theme_macStyle: true # 使用 Mac 风格
+highlight_copy: true # 复制按钮
+highlight_lang: true # 显示代码语言
+highlight_shrink: false # true: 收缩代码块 / false: 展开代码块 | none: 展开代码块并隐藏按钮
+highlight_fullpage: true # true: 添加切换全屏的按钮
 
-code_blocks:
-  # Code block theme: darker / pale night / light / ocean / false
-  theme: light
-  macStyle: false
-  # Code block height limit (unit: px)
-  height_limit: false
-  word_wrap: false
-
-  # Toolbar
-  copy: true
-  language: true
-  # true: shrink the code blocks | false: expand the code blocks | none: expand code blocks and hide the button
-  shrink: false
-  fullpage: false
-
-# Social media links
-# Formal:
-#   icon: link || the description || color
+# Social Settings (社交图标设置)
+# 正式:
+#   icon: 链接 || 描述 || 颜色
 social:
   # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
 
-# --------------------------------------
-# Image Settings
+# Image (图片设置)
 # --------------------------------------
 
+# Favicon（网站图标）
 favicon: /img/favicon.png
 
+# Avatar (头像)
 avatar:
-  img: /img/butterfly-icon.png
+  img: /img/favicon.png
   effect: false
 
-# Disable all banner images
+# 禁用所有横幅图片
 disable_top_img: false
 
-# If the banner of page not setting, it will show the default_top_img
+# 首页的横幅图片
+index_img: 
+
+# 如果页面没有设置横幅，则显示顶部图片
 default_top_img:
 
-# The banner image of index page
-index_img:
-
-# The banner image of archive page
+# 归档页面的横幅图片
 archive_img:
 
-# Note: tag page, not tags page
+# 如果标签页面没有设置横幅，则显示顶部图片
+# 注意：标签页面，不是标签页面（子标签页面的顶部图片）
 tag_img:
 
-# The banner image of tag page, you can set the banner image for each tag
-# Format:
-#  - tag name: xxxxx
+# 标签页面的横幅图片
+# 格式:
+#  - 标签名: xxxxx
+
 tag_per_img:
 
-# Note: category page, not categories page
+# 如果分类页面没有设置横幅，则显示顶部图片
+# 注意：分类页面，不是分类页面（子分类页面的顶部图片）
 category_img:
 
-# The banner image of category page, you can set the banner image for each category
-# Format:
-#  - category name: xxxxx
+# 分类页面的横幅图片
+# 格式:
+#  - 分类名: xxxxx
+
 category_per_img:
 
-# The background image of footer
-footer_img: false
-
-# Website Background
-# Can set it to color or image url
-background:
-
+# 封面
 cover:
-  # Disable the cover or not
+  # 是否显示文章封面
   index_enable: true
   aside_enable: true
   archives_enable: true
-  # When cover is not set, the default cover is displayed
+  # 首页封面显示的位置
+  # left/right/both
+  position: both
+  # 当没有设置封面时，显示默认封面
   default_cover:
-    # - xxx.jpg
+    # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
 
-# Replace Broken Images
+# 替换无法显示的图片
 error_img:
   flink: /img/friend_404.gif
   post_page: /img/404.jpg
 
-# A simple 404 page
+# 一个简单的 404 页面
 error_404:
   enable: false
-  subtitle: 'Page Not Found'
-  background: /img/error-page.png
+  subtitle: '页面未找到'
+  background: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
 
+# post_meta 页面元数据
 post_meta:
-  # Home Page
-  page:
-    # Choose: created / updated / both
-    date_type: created
-    # Choose: date / relative
-    date_format: date
-    categories: true
-    tags: false
-    label: true
+  page: # 首页
+    date_type: created # created 或 updated 或 both 主页文章日期显示创建日或者更新日或都显示
+    date_format: date # date 或 relative 显示日期还是相对日期
+    categories: true # true 或 false 主页是否显示分类
+    tags: false # true 或 false 主页是否显示标签
+    label: true # true 或 false 显示描述性文字
   post:
-    # Choose: left / center
-    position: left
-    # Choose: created / updated / both
-    date_type: both
-    # Choose: date / relative
-    date_format: date
-    categories: true
-    tags: true
-    label: true
+    position: left # left 或 center 文章页标题位置
+    date_type: both # created 或 updated 或 both 文章页日期显示创建日或者更新日或都显示
+    date_format: date # date 或 relative 显示日期还是相对日期
+    categories: true # true 或 false 文章页是否显示分类
+    tags: true # true 或 false 文章页是否显示标签
+    label: true # true 或 false 显示描述性文字
 
-# --------------------------------------
-# Index page settings
-# --------------------------------------
-
-# The top_img settings of home page
-# default: top img - full screen, site info - middle
-# The position of site info, eg: 300px/300em/300rem/10%
-index_site_info_top:
-# The height of top_img, eg: 300px/300em/300rem
-index_top_img_height:
-
-# The subtitle on homepage
-subtitle:
-  enable: false
-  # Typewriter Effect
-  effect: true
-  # Customize typed.js
-  # https://github.com/mattboldt/typed.js/#customization
-  typed_option:
-  # Source - Call the third-party service API (Chinese only)
-  # It will show the source first, then show the content of sub
-  # Choose: false/1/2/3
-  # false - disable the function
-  # 1 - hitokoto.cn
-  # 2 - yijuzhan.com
-  # 3 - jinrishici.com
-  source: false
-  # If you close the typewriter effect, the subtitle will only show the first line of sub
-  sub:
-
-# Article layout on the homepage
-# 1: Cover on the left, info on the right
-# 2: Cover on the right, info on the left
-# 3: Cover and info alternate between left and right
-# 4: Cover on top, info on the bottom
-# 5: Info displayed on the cover
-# 6: Masonry layout - Cover on top, info on the bottom
-# 7: Masonry layout - Info displayed on the cover
-index_layout: 3
-
-# Display the article introduction on homepage
+# 在首页显示文章介绍
 # 1: description
-# 2: both (if the description exists, it will show description, or show the auto_excerpt)
-# 3: auto_excerpt (default)
-# false: do not show the article introduction
+# 2: both (如果描述存在，则显示描述，否则显示自动摘要)
+# 3: auto_excerpt (默认)
+# false: 不显示文章介绍
 index_post_content:
   method: 3
-  # If you set method to 2 or 3, the length need to config
-  length: 500
+  length: 500 # 如果你设置方法为 2 或 3，需要配置长度
 
-# --------------------------------------
-# Post Settings
+# 锚点
+anchor:
+  # 当你滚动时，URL 将根据标题 id 更新
+  auto_update: false
+  # 点击标题滚动并更新锚点
+  click_to_scroll: false
+
+# 图片描述文字
+photofigcaption: false
+
+# 复制设置
+# copyright: 在复制内容后面添加版权信息
+copy:
+  enable: true
+  copyright:
+    enable: false
+    limit_count: 50
+
+# 文章
 # --------------------------------------
 
+# toc (目录)
 toc:
   post: true
   page: false
   number: true
   expand: false
-  # Only for post
-  style_simple: false
+  style_simple: false # 针对文章
   scroll_percent: true
 
+# 文章版权
 post_copyright:
   enable: true
   decode: false
@@ -204,7 +168,7 @@ post_copyright:
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-# Sponsor/reward
+# 赞助/打赏
 reward:
   enable: false
   text:
@@ -216,63 +180,55 @@ reward:
     #   link:
     #   text: alipay
 
-# Post edit
-# Easily browse and edit blog source code online.
+# 文章编辑
+# 在线轻松浏览和编辑博客源代码
 post_edit:
   enable: false
   # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
-  # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
+  # 例如: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
   url:
 
-# Related Articles
+# 相关文章
 related_post:
   enable: true
-  # Number of posts displayed
-  limit: 6
-  # Choose: created / updated
-  date_type: created
+  limit: 6 # 显示的文章数量
+  date_type: created # 或者 created 或 updated 文章日期显示创建日或者更新日
 
-# Choose: 1 / 2 / false
-# 1: The 'next post' will link to old post
-# 2: The 'next post' will link to new post
-# false: disable pagination
+# 文章分页
+# value: 1 || 2 || false
+# 1: 下一篇文章将链接到旧文章
+# 2: 下一篇文章将链接到新文章
+# false: 禁用分页
 post_pagination: 1
 
-# Displays outdated notice for a post
+# 显示文章的过时提醒
 noticeOutdate:
   enable: false
-  # Style: simple / flat
-  style: flat
-  # When will it be shown
-  limit_day: 365
-  # Position: top / bottom
-  position: top
-  message_prev: It has been
-  message_next: days since the last update, the content of the article may be outdated.
+  style: flat # 风格: simple/flat
+  limit_day: 500 # 何时显示
+  position: top # 位置: top/bottom
+  message_prev: 已经有
+  message_next: 天未更新，文章内容可能已过时。
 
+# 页脚设置
 # --------------------------------------
-# Footer Settings
-# --------------------------------------
+
 footer:
   owner:
     enable: true
-    since: 2019
+    since: 2020
   custom_text:
-  # Copyright of theme and framework
-  copyright: true
+  copyright: true # 主题和框架的版权
 
-# --------------------------------------
-# Aside Settings
+# 侧边栏
 # --------------------------------------
 
 aside:
   enable: true
   hide: false
-  # Show the button to hide the aside in bottom right button
   button: true
-  mobile: true
-  # Position: left / right
-  position: right
+  mobile: true # 在移动设备上显示
+  position: right # left or right
   display:
     archive: true
     tag: true
@@ -283,268 +239,202 @@ aside:
     button:
       enable: true
       icon: fab fa-github
-      text: Follow Me
+      text: 关注我
       link: https://github.com/xxxxxx
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 这是我的博客
   card_recent_post:
     enable: true
-    # If set 0 will show all
-    limit: 5
-    # Sort: date / updated
-    sort: date
-    sort_order:
-  card_newest_comments:
-    enable: false
-    sort_order:
-    limit: 6
-    # Unit: mins, save data to localStorage
-    storage: 10
-    avatar: true
+    limit: 5 # 如果设置为 0 将显示全部
+    sort: date # date 或 updated
+    sort_order: # 除非你知道它如何工作，否则不要修改设置
   card_categories:
     enable: true
-    # If set 0 will show all
-    limit: 8
-    # Choose: none / true / false
-    expand: none
-    sort_order:
+    limit: 8 # 如果设置为 0 将显示全部
+    expand: none # none/true/false
+    sort_order: # 除非你知道它如何工作，否则不要修改设置
   card_tags:
     enable: true
-    # If set 0 will show all
-    limit: 40
+    limit: 40 # 如果设置为 0 将显示全部
     color: false
-    # Order of tags, random/name/length
-    orderby: random
-    # Sort of order. 1, asc for ascending; -1, desc for descending
-    order: 1
-    sort_order:
+    orderby: random # 标签顺序，random/name/length
+    order: 1 # 排序方式。1，升序；-1，降序
+    sort_order: # 除非你知道它如何工作，否则不要修改设置
   card_archives:
     enable: true
-    # Type: monthly / yearly
-    type: monthly
-    # Eg: YYYY年MM月
-    format: MMMM YYYY
-    # Sort of order. 1, asc for ascending; -1, desc for descending
-    order: -1
-    # If set 0 will show all
-    limit: 8
-    sort_order:
-  card_post_series:
-    enable: true
-    # The title shows the series name
-    series_title: false
-    # Order by title or date
-    orderBy: 'date'
-    # Sort of order. 1, asc for ascending; -1, desc for descending
-    order: -1
+    type: monthly # yearly 或 monthly
+    format: MMMM YYYY # 例如：YYYY年MM月
+    order: -1 # 排序方式。1，升序；-1，降序
+    limit: 8 # 如果设置为 0 将显示全部
+    sort_order: # 除非你知道它如何工作，否则不要修改设置
   card_webinfo:
     enable: true
     post_count: true
     last_push_date: true
-    sort_order:
-    # Time difference between publish date and now
-    # Formal: Month/Day/Year Time or Year/Month/Day Time
-    # Leave it empty if you don't enable this feature
-    runtime_date:
+    sort_order: # 除非你知道它如何工作，否则不要修改设置
+  card_post_series:
+    enable: true
+    series_title: false # 标题显示系列名称
+    orderBy: 'date' # 按标题或日期排序
+    order: -1 # 排序方式。1，升序；-1，降序
 
-# --------------------------------------
-# Bottom right button
-# --------------------------------------
-
-# The distance between the bottom right button and the bottom (default unit: px)
-rightside_bottom:
-
-# Conversion between Traditional and Simplified Chinese
-translate:
-  enable: false
-  # The text of a button
-  default: 繁
-  # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
-  defaultEncoding: 2
-  # Time delay
-  translateDelay: 0
-  # The text of the button when the language is Simplified Chinese
-  msgToTraditionalChinese: '繁'
-  # The text of the button when the language is Traditional Chinese
-  msgToSimplifiedChinese: '簡'
-
-# Read Mode
-readmode: true
-
-# Dark Mode
-darkmode:
-  enable: true
-  # Toggle Button to switch dark/light mode
-  button: true
-  # Switch dark/light mode automatically
-  # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
-  # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
-  # autoChangeMode: false
-  autoChangeMode: false
-  # Set the light mode time. The value is between 0 and 24. If not set, the default value is 6 and 18
-  start:
-  end:
-
-# Show scroll percent in scroll-to-top button
-rightside_scroll_percent: false
-
-# Don't modify the following settings unless you know how they work
-# Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
-# Don't repeat the same value
-rightside_item_order:
-  enable: false
-  # Default: readmode,translate,darkmode,hideAside
-  hide:
-  # Default: toc,chat,comment
-  show:
-
-# --------------------------------------
-# Global Settings
-# --------------------------------------
-
-anchor:
-  # When you scroll, the URL will update according to header id.
-  auto_update: false
-  # Click the headline to scroll and update the anchor
-  click_to_scroll: false
-
-photofigcaption: false
-
-copy:
-  enable: true
-  # Add the copyright information after copied content
-  copyright:
-    enable: false
-    limit_count: 150
-
-# Need to install the hexo-wordcount plugin
-wordcount:
-  enable: false
-  # Display the word count of the article in post meta
-  post_wordcount: true
-  # Display the time to read the article in post meta
-  min2read: true
-  # Display the total word count of the website in aside's webinfo
-  total_wordcount: true
-
-# Busuanzi count for PV / UV in site
+# 网站访问人数统计
 busuanzi:
   site_uv: true
   site_pv: true
   page_pv: true
 
-# --------------------------------------
-# Math
-# --------------------------------------
+# 网页运行时间（发布日期与现在的时间差）
+# 格式：Month/Day/Year Time or Year/Month/Day Time
+runtimeshow:
+  enable: false
+  publish_date:
 
-# About the per_page
-# if you set it to true, it will load mathjax/katex script in each page
-# if you set it to false, it will load mathjax/katex script according to your setting (add the 'mathjax: true' or 'katex: true' in page's front-matter)
-math:
-  # Choose: mathjax, katex
-  # Leave it empty if you don't need math
-  use:
-  per_page: true
-  hide_scrollbar: false
+# 侧边栏小部件 - 最新评论
+newest_comments:
+  enable: false
+  sort_order:
+  limit: 6
+  storage: 10 # 单位：分钟，数据保存到 localStorage
+  avatar: true
 
-  mathjax:
-    # Enable the contextual menu
-    enableMenu: true
-    # Choose: all / ams / none, This controls whether equations are numbered and how
-    tags: none
-
-  katex:
-    # Enable the copy KaTeX formula
-    copy_tex: false
-
-# --------------------------------------
-# Search
+# 右下角按钮
 # --------------------------------------
 
-search:
-  # Choose: algolia_search / local_search / docsearch
-  # leave it empty if you don't need search
-  use:
-  placeholder:
+# 简繁转换
+translate:
+  enable: false
+  # 按钮的文本
+  default: 繁
+  # 网站的语言 (1 - 繁体中文 / 2 - 简体中文）
+  defaultEncoding: 2
+  # 时间延迟
+  translateDelay: 0
+  # 简体字状态下按钮的文本
+  msgToTraditionalChinese: '繁'
+  # 繁体字状态下按钮的文本
+  msgToSimplifiedChinese: '简'
 
-  # Algolia Search
-  algolia_search:
-    # Number of search results per page
-    hitsPerPage: 6
+# 阅读模式
+readmode: true
 
-  # Local Search
-  local_search:
-    # Preload the search data when the page loads.
-    preload: false
-    # Show top n results per article, show all results by setting to -1
-    top_n_per_article: 1
-    # Unescape html strings to the readable one.
-    unescape: false
-    CDN:
+# 暗色模式
+darkmode:
+  enable: true
+  # 切换暗色/浅色模式的按钮
+  button: true
+  # 自动切换暗色/浅色模式 (自动切换 dark mode 和 light mode)
+  # autoChangeMode: 1  跟随系统设置，如果系统不支持暗色模式，则在下午 6 点到早上 6 点之间切换暗色模式
+  # autoChangeMode: 2  在下午 6 点到早上 6 点之间切换暗色模式
+  # autoChangeMode: false
+  autoChangeMode: false
+  # 设置浅色模式的时间。取值范围是 0 到 24。如果没有设置，默认值是 6 和 18
+  start:
+  end:
 
-  # Docsearch
-  # https://docsearch.algolia.com/
-  docsearch:
-    appId:
-    apiKey:
-    indexName:
-    option:
+# 在返回顶部按钮中显示滚动百分比
+rightside_scroll_percent: false
 
+# 除非你知道它们如何工作，否则不要修改以下设置
+# 选择：readmode,translate,darkmode,hideAside,toc,chat,comment
+# 不要重复
+rightside_item_order:
+  enable: false
+  hide: # readmode,translate,darkmode,hideAside
+  show: # toc,chat,comment
+
+# Math (數學)
 # --------------------------------------
-# Share System
+
+# 关于每页的设置
+# 如果你设置为 true，它将在每一页都加载 mathjax/katex 脚本 (true 表示每一页都加载 js)
+# 如果你设置为 false，它将根据你的设置加载 mathjax/katex 脚本 (需要在页面的 Markdown Front-matter 中添加 mathjax: true)
+# (false 按需加载，必须在使用的 Markdown Front-matter 中添加 mathjax: true)
+
+# MathJax
+mathjax:
+  enable: false
+  per_page: false
+
+# KaTeX
+katex:
+  enable: false
+  per_page: false
+  hide_scrollbar: true
+
+# 搜索
+# 见 https://butterfly.js.org/posts/ceeb73f/#搜索系统
 # --------------------------------------
 
-share:
-  # Choose: sharejs / addtoany
-  # Leave it empty if you don't need share
-  use: sharejs
+# Algolia 搜索
+algolia_search:
+  enable: false
+  hits:
+    per_page: 6
 
-  # Share.js
-  # https://github.com/overtrue/share.js
-  sharejs:
-    sites: facebook,twitter,wechat,weibo,qq
+# 本地搜索
+local_search:
+  enable: false
+  # 页面加载时预加载搜索数据
+  preload: false
+  # 每篇文章显示前 n 个结果，设置为 -1 显示所有结果
+  top_n_per_article: 1
+  # 将 HTML 字符串转换为可读的格式
+  unescape: false
+  CDN:
 
-  # AddToAny
-  # https://www.addtoany.com/
-  addtoany:
-    item: facebook,twitter,wechat,sina_weibo,facebook_messenger,email,copy_link
+# Docsearch
+docsearch:
+  enable: false
+  appId:
+  apiKey:
+  indexName:
+  option:
 
+# 分享系统
 # --------------------------------------
-# Comments System
+
+# Share.js
+# https://github.com/overtrue/share.js
+sharejs:
+  enable: true
+  sites: facebook,twitter,wechat,weibo,qq
+
+# AddToAny
+# https://www.addtoany.com/
+addtoany:
+  enable: false
+  item: facebook,twitter,wechat,sina_weibo,facebook_messenger,email,copy_link
+
+# 评论系统
 # --------------------------------------
 
 comments:
-  # Up to two comments system, the first will be shown as default
-  # Leave it empty if you don't need comments
-  # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
-  # Format of two comments system : Disqus,Waline
+  # 最多可以选择两个评论系统，第一个将作为默认显示
+  # 选择：Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   use:
-  # Display the comment name next to the button
-  text: true
-  # Lazyload: The comment system will be load when comment element enters the browser's viewport.
-  # If you set it to true, the comment count will be invalid
+  text: true # 在按钮旁边显示评论名称
+  # lazyload: 当评论元素进入浏览器视口时，评论系统将被加载。
+  # 如果你设置为 true，则评论计数将无效
   lazyload: false
-  # Display comment count in post's top_img
-  count: false
-  # Display comment count in Home Page
-  card_post_count: false
+  count: false # 在文章顶部图片中显示评论计数
+  card_post_count: false # 在首页显示评论计数
 
 # Disqus
 # https://disqus.com/
 disqus:
   shortname:
-  # For newest comments widget
-  apikey:
+  apikey: # 用于最新评论小部件
 
-# Alternative Disqus - Render comments with Disqus API
+# DisqusJS 评论系统，可以在网络审查地区加载 Disqus 评论列表，兼容原版
 # https://github.com/SukkaW/DisqusJS
 disqusjs:
   shortname:
   apikey:
   option:
 
-# Livere
+# Livere (来必力)
 # https://www.livere.com/
 livere:
   uid:
@@ -562,22 +452,19 @@ gitalk:
 # Valine
 # https://valine.js.org
 valine:
-  appId:
-  appKey:
-  avatar: monsterid
-  # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
-  serverURLs:
-  bg:
-  # Use Valine visitor count as the page view count
+  appId: # Leancloud 应用 App ID
+  appKey: # Leancloud 应用 App 密钥
+  avatar: monsterid # Gravatar 风格 https://valine.js.org/#/avatar
+  serverURLs: # 此配置适用于国内自定义域名用户，海外版本将自动检测（无需手动填写）
+  bg: # Valine 背景
   visitor: false
   option:
 
-# Waline - A simple comment system with backend support fork from Valine
+# Waline - 一个简单的带有后端支持的评论系统，Valine 的一个分支
 # https://waline.js.org/
 waline:
-  serverURL:
-  bg:
-  # Use Waline pageview count as the page view count
+  serverURL: # Waline 服务器地址 URL
+  bg: # Waline 背景
   pageview: false
   option:
 
@@ -585,31 +472,26 @@ waline:
 # https://utteranc.es/
 utterances:
   repo:
-  # Issue Mapping: pathname/url/title/og:title
+  # 问题映射：pathname/url/title/og:title
   issue_term: pathname
-  # Theme: github-light/github-dark/github-dark-orange/icy-dark/dark-blue/photon-dark
+  # 主题：github-light/github-dark/github-dark-orange/icy-dark/dark-blue/photon-dark
   light_theme: github-light
   dark_theme: photon-dark
-  js:
-  option:
 
 # Facebook Comments Plugin
 # https://developers.facebook.com/docs/plugins/comments/
 facebook_comments:
   app_id:
-  # optional
-  user_id:
-  pageSize: 10
-  # Choose: social / time / reverse_time
-  order_by: social
-  lang: en_US
+  user_id: # 可选
+  pageSize: 10 # 显示的评论数量
+  order_by: social # social/time/reverse_time
+  lang: zh_TW # 语言 en_US/zh_CN/zh_TW 等
 
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
   envId:
   region:
-  # Use Twikoo visitor count as the page view count
   visitor: false
   option:
 
@@ -619,16 +501,16 @@ giscus:
   repo:
   repo_id:
   category_id:
-  light_theme: light
-  dark_theme: dark
-  js:
+  theme:
+    light: light
+    dark: dark
   option:
 
 # Remark42
 # https://remark42.com/docs/configuration/frontend/
 remark42:
-  host:
-  siteId:
+  host: # 你的主机 URL
+  siteId: # 你的站点 ID
   option:
 
 # Artalk
@@ -636,90 +518,86 @@ remark42:
 artalk:
   server:
   site:
-  # Use Artalk visitor count as the page view count
   visitor: false
   option:
 
-# --------------------------------------
-# Chat Services
+# 聊天服务
 # --------------------------------------
 
-chat:
-  # Choose: chatra/tidio/crisp
-  # Leave it empty if you don't need chat
-  use:
-  # Chat Button [recommend]
-  # It will create a button in the bottom right corner of website, and hide the origin button
-  rightside_button: false
-  # The origin chat button is displayed when scrolling up, and the button is hidden when scrolling down
-  button_hide_show: false
+# 聊天按钮 [推荐]
+# 它将在网站右下角创建一个按钮，并隐藏原始按钮
+chat_btn: false
 
+# 当滚动至上部时显示原始聊天按钮，滚动下来时隐藏按钮
+chat_hide_show: false
+
+# Chatra
 # https://chatra.io/
 chatra:
+  enable: false
   id:
 
+# Tidio
 # https://www.tidio.com/
 tidio:
+  enable: false
   public_key:
 
+# Daovoice
+# http://dashboard.daovoice.io/app
+daovoice:
+  enable: false
+  app_id:
+
+# Crisp
 # https://crisp.chat/en/
 crisp:
+  enable: false
   website_id:
 
-# --------------------------------------
-# Analysis
+# Messenger
+# https://developers.facebook.com/docs/messenger-platform/discovery/facebook-chat-plugin/
+messenger:
+  enable: false
+  pageID:
+  lang: zh_TW # 语言 en_US/zh_CN/zh_TW 等
+
+# 分析
 # --------------------------------------
 
+# Baidu Analytics
 # https://tongji.baidu.com/web/welcome/login
 baidu_analytics:
 
+# Google Analytics
 # https://analytics.google.com/analytics/web/
 google_analytics:
 
+# Cloudflare Analytics
 # https://www.cloudflare.com/zh-tw/web-analytics/
 cloudflare_analytics:
 
+# Microsoft Clarity
 # https://clarity.microsoft.com/
 microsoft_clarity:
 
-# https://umami.is/
-umami_analytics:
-  enable: false
-  # For self-hosted setups, configure the hostname of the Umami instance
-  serverURL:
-  website_id:
-  option:
-  UV_PV:
-    site_uv: false
-    site_pv: false
-    page_pv: false
-    # Umami Cloud (API key) / self-hosted Umami (token)
-    token:
-
-# --------------------------------------
-# Advertisement
+# 广告
 # --------------------------------------
 
-# Google Adsense
+# Google Adsense (谷歌广告)
 google_adsense:
   enable: false
   auto_ads: true
   js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
   client:
   enable_page_level_ads: true
+# 手动插入广告
+# ad:
+#   index:
+#   aside:
+#   post:
 
-# Insert ads manually
-# Leave it empty if you don't need ads
-ad:
-  # Insert ads in the index (every three posts)
-  index:
-  # Insert ads in aside
-  aside:
-  # Insert ads in the post (before pagination)
-  post:
-
-# --------------------------------------
-# Verification
+# 站长验证
 # --------------------------------------
 
 site_verification:
@@ -728,12 +606,11 @@ site_verification:
   # - name: baidu-site-verification
   #   content: xxxxxxx
 
-# --------------------------------------
-# Beautify / Effect
+# 美化/效果
 # --------------------------------------
 
-# Theme color for customize
-# Notice: color value must in double quotes like "#000" or may cause error!
+# 自定义主题颜色
+# 注意：颜色值必须用双引号引起来，如 "#000"，否则可能会导致错误！
 
 # theme_color:
 #   enable: true
@@ -753,258 +630,283 @@ site_verification:
 #   meta_theme_color_light: "ffffff"
 #   meta_theme_color_dark: "#0d0d0d"
 
-# The user interface setting of category and tag page
-# Choose: index - same as Homepage UI / default - same as archives UI
-# leave it empty or index
-category_ui:
-tag_ui:
+# 首页的 top_img 设置
+# 默认：top img - 全屏，site info - 中间（默认 top_img 全屏，site_info 在中间）
+# 网站信息的位置，例如：300px/300em/300rem/10%（首页标题距离顶部的距离）
+index_site_info_top:
+# 首页 top_img 的高度，例如：300px/300em/300rem
+index_top_img_height:
 
-# Rounded corners for UI elements
-rounded_corners_ui: true
+# 分类和标签页面的用户界面设置 (category 和 tag 页的 UI 设置)
+# index - 与首页 UI 相同（index 值代表 UI 将与首页的 UI 一样）
+# default - 与归档 UI 相同，默认跟 archives 页面 UI 一样
+category_ui: # 留空或 index
+tag_ui: # 留空或 index
 
-# Stretches the lines so that each line has equal width
+# 拉伸行宽，使每一行宽度相等（文字两端对齐，对最后一行无效）
 text_align_justify: false
 
-# Add a mask to the header and footer
+# 设置网站背景
+# 可以设置为颜色或图片（可设置图片 或者 颜色）
+# 图片格式：url(http://xxxxxx.com/xxx.jpg)
+background:
+
+# 页脚背景
+footer_bg: false
+
+# 为 header 或 footer 添加黑色半透明遮罩
 mask:
   header: true
   footer: true
 
-# Loading Animation
-preloader:
-  enable: false
-  # source
-  # 1. fullpage-loading
-  # 2. pace (progress bar)
-  source: 1
-  # pace theme (see https://codebyzach.github.io/pace/)
-  pace_css_url:
+# 右下角按钮距离底部的位置，默认单位为像素
+rightside_bottom:
 
-# Page Transition
+# 开启网页进入效果
 enter_transitions: true
 
-# Default display mode - light (default) / dark
-display_mode: light
-
-# Configuration for beautifying the content of the article
-beautify:
-  enable: false
-  # Specify the field to beautify (site or post)
-  field: post
-  # Specify the icon to be used as a prefix for the title, such as '\f0c1'
-  title_prefix_icon:
-  # Specify the color of the title prefix icon, such as '#F47466'
-  title_prefix_icon_color:
-
-# Global font settings
-# Don't modify the following settings unless you know how they work
-font:
-  global_font_size:
-  code_font_size:
-  font_family:
-  code_font_family:
-
-# Font settings for the site title and site subtitle
-blog_title_font:
-  font_link:
-  font_family:
-
-# The setting of divider icon
-hr_icon:
-  enable: true
-  # The unicode value of Font Awesome icon, such as '\3423'
-  icon:
-  icon_top:
-
-# Typewriter Effect
+# 打字效果
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
   enable: false
-  colorful: true
-  shake: true
+  colorful: true # 开启粒子动画（发光特效）
+  shake: true # 开启 shake（抖动特效）
   mobile: false
 
-# Background effects
+# 背景特效
 # --------------------------------------
 
-# canvas_ribbon
-# See: https://github.com/hustcc/ribbon.js
+# canvas_ribbon (静止彩带背景)
+# 见: https://github.com/hustcc/ribbon.js
 canvas_ribbon:
   enable: false
-  # The size of ribbon
   size: 150
-  # The opacity of ribbon (0 ~ 1)
   alpha: 0.6
   zIndex: -1
   click_to_change: false
   mobile: false
 
-# Fluttering Ribbon
+# Fluttering Ribbon (动态彩带)
 canvas_fluttering_ribbon:
-  enable: false
+  enable: true
   mobile: false
 
 # canvas_nest
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
   enable: false
-  # Color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
-  color: '0,0,255'
-  # The opacity of line (0~1)
-  opacity: 0.7
-  # The z-index property of the background
-  zIndex: -1
-  # The number of lines
-  count: 99
+  color: '0,0,255' # 线条的颜色，默认: '0,0,0'；RGB 值：(R,G,B)。（注意：用 ',' 分隔）
+  opacity: 0.7 # 线条的透明度 (0~1)，默认: 0.5
+  zIndex: -1 # 背景的 z-index 属性，默认: -1
+  count: 99 # 线条的数量，默认: 99
   mobile: false
 
-# Mouse click effects: fireworks
+# 鼠标点击效果：烟花特效
 fireworks:
-  enable: false
-  zIndex: 9999
-  mobile: false
+  enable: true
+  zIndex: 9999 # -1 或 9999
+  mobile: false  
 
-# Mouse click effects: Heart symbol
+# 鼠标点击效果：爱心
 click_heart:
   enable: false
   mobile: false
 
-# Mouse click effects: words
+# 鼠标点击效果：文字
 clickShowText:
   enable: false
   text:
-    # - I
-    # - LOVE
-    # - YOU
+    # - 我
+    # - 爱
+    # - 你
   fontSize: 15px
   random: false
   mobile: false
 
-# --------------------------------------
-# Lightbox Settings
-# --------------------------------------
+# 网站默认的显示模式
+# light (默认) / dark
+display_mode: light
 
-# Choose: fancybox / medium_zoom
-# https://github.com/francoischalifour/medium-zoom
-# https://fancyapps.com/fancybox/
-# Leave it empty if you don't need lightbox
-lightbox:
-
-# --------------------------------------
-# Tag Plugins settings
-# --------------------------------------
-
-# Series
-series:
+# 美化页面显示
+beautify:
   enable: false
-  # Order by title or date
-  orderBy: 'title'
-  # Sort of order. 1, asc for ascending; -1, desc for descending
-  order: 1
+  field: post # site/post
+  title-prefix-icon: # '\\f0c1'
+  title-prefix-icon-color: # '#F47466'
+
+# 全局字体设置
+# 除非你知道它们如何工作，否则不要修改以下设置
+font:
+  global-font-size:
+  code-font-size:
+  font-family:
+  code-font-family:
+
+# 网站标题和副标题的字体设置
+# 左上角网站名字 主页居中网站名字
+blog_title_font:
+  font_link:
+  font-family:
+
+# 水平分隔线图标设置
+hr_icon:
+  enable: true
+  icon: # 字体图标的 Unicode 值，例如 '\\3423'
+  icon-top:
+
+# 首页副标题
+subtitle:
+  # 是否开启：true：开启，false：不开启
+  enable: true
+  # 打字效果
+  effect: true
+  # 定制 typed.js
+  # https://github.com/mattboldt/typed.js/#customization
+  typed_option:
+  # source 调用第三方服务
+  # source: false 关闭调用
+  # source: 1  调用一言网的一句话（简体） https://hitokoto.cn/
+  # source: 2  调用一句网（简体） https://yijuzhan.com/
+  # source: 3  调用今日诗词（简体） https://www.jinrishici.com/
+  # subtitle 会先显示 source , 再显示 sub 的内容
+  source: false
+  # 如果关闭打字效果，subtitle 只会显示 sub 的第一行文字
+  sub:
+    - 你在抱怨什么呢
+    - 为明天到来的事，说人生像是没有意义
+    - 没有选择会是唯一的路
+    - 这不是你自己的问题，人终归要好好去生活
+
+
+
+# 加载动画
+preloader:
+  enable: false
+  # source
+  # 1. fullpage-loading
+  # 2. pace (progress bar)
+  source:
+  # pace 主题 (见 https://codebyzach.github.io/pace/)
+  pace_css_url:
+
+# 字数统计
+# 见 https://butterfly.js.org/posts/ceeb73f/#字数统计
+wordcount:
+  enable: false
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
+
+# 图片大图查看模式
+# --------------------------------------
+# 只能选择一个，或者两个都不选
+
+# medium-zoom
+# https://github.com/francoischalifour/medium-zoom
+medium_zoom: false
+
+# fancybox
+# https://fancyapps.com/fancybox/
+fancybox: true
+
+# 标签插件设置
+# --------------------------------------
+
+# series (系列文章)
+series:
+  enable: true
+  orderBy: 'title' # 按标题或日期排序
+  order: 1 # 排序方式。1, 升序；-1, 降序
   number: true
 
-# ABCJS - The ABC Music Notation Plugin
-# https://github.com/paulrosen/abcjs
+# abcjs (乐谱渲染)
+# 见 https://github.com/paulrosen/abcjs
 abcjs:
   enable: false
   per_page: true
 
 # Mermaid
-# https://github.com/mermaid-js/mermaid
+# 见 https://github.com/mermaid-js/mermaid
 mermaid:
-  enable: false
-  # Write Mermaid diagrams using code blocks
-  code_write: false
-  # built-in themes: default / forest / dark / neutral
+  enable: true
+  # 以代码块形式书写 Mermaid 图表（以代码块形式书写 Mermaid）
+  code_write: false 
+  # 内置主题: default/forest/dark/neutral
   theme:
     light: default
     dark: dark
 
-# chartjs
-# see https://www.chartjs.org/docs/latest/
-chartjs:
-  enable: false
-  # Do not modify unless you understand how they work.
-  # The default settings are only used when the MD syntax is not specified.
-  # General font color for the chart
-  fontColor:
-    light: 'rgba(0, 0, 0, 0.8)'
-    dark: 'rgba(255, 255, 255, 0.8)'
-  # General border color for the chart
-  borderColor:
-    light: 'rgba(0, 0, 0, 0.1)'
-    dark: 'rgba(255, 255, 255, 0.2)'
-  # Background color for scale labels on radar and polar area charts
-  scale_ticks_backdropColor:
-    light: 'transparent'
-    dark: 'transparent'
-
-# Note - Bootstrap Callout
+# Note (Bootstrap Callout)
 note:
-  # Note tag style values:
-  #  - simple    bs-callout old alert style. Default.
-  #  - modern    bs-callout new (v2-v3) alert style.
-  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
-  #  - disabled  disable all CSS styles import of note tag.
+  # Note 标签样式值:
+  #  - simple    bs-callout 旧版警告样式。默认。
+  #  - modern    bs-callout 新版 (v2-v3) 警告样式。
+  #  - flat      带有背景的 flat callout 样式，类似于 Mozilla 或 StackOverflow。
+  #  - disabled  禁用所有 CSS 样式的导入。
   style: flat
   icons: true
   border_radius: 3
-  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
-  # Offset also applied to label tag variables. This option can work with disabled note tag.
+  # 对现代和平面风格的背景进行百分比的偏移量更亮 (现代: -12 | 12; 平面: -18 | 6)。
+  # 偏移量也应用于标签变量。此选项可以与禁用的 note 标签一起使用。
   light_bg_offset: 0
 
-# --------------------------------------
-# Other Settings
+# 其他
 # --------------------------------------
 
+# Pjax
+# 它可能包含错误并且不稳定，请在发现错误时提供反馈。
 # https://github.com/MoOx/pjax
 pjax:
   enable: false
-  # Exclude the specified pages from pjax, such as '/music/'
   exclude:
-    # - /xxxxxx/
+    # - xxxx
+    # - xxxx
 
-# Inject the css and script (aplayer/meting)
+# 注入 CSS 和脚本 (aplayer/meting)
 aplayerInject:
   enable: false
   per_page: true
 
-# Snackbar - Toast Notification
+# Snackbar (Toast 通知弹窗)
 # https://github.com/polonel/SnackBar
-# position: top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
+# position 弹窗位置
+# 可选 top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
   enable: false
   position: bottom-left
-  # The background color of Toast Notification in light mode and dark mode
-  bg_light: '#49b1f5'
-  bg_dark: '#1f1f1f'
+  bg_light: '#49b1f5' # 浅色模式下 Toast 通知的背景颜色
+  bg_dark: '#1f1f1f' # 深色模式下 Toast 通知的背景颜色
 
-# Instant.page
 # https://instant.page/
+# prefetch (预加载)
 instantpage: false
 
-# Lazyload
+# https://github.com/vinta/pangu.js
+# 在中英文之间添加空格
+pangu:
+  enable: false
+  field: site # site/post
+
+# 懒加载 (图片懒加载)
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
-  # Specify the field to use lazyload (site or post)
-  field: site
-  placeholder:
-  blur: false
+  enable: true
+  loadingImg: /img/loading.gif
+
 
 # PWA
-# See https://github.com/JLHwung/hexo-offline
+# 见 https://github.com/JLHwung/hexo-offline
 # ---------------
-pwa:
-  enable: false
-  manifest:
-  apple_touch_icon:
-  favicon_32_32:
-  favicon_16_16:
-  mask_icon:
+# pwa:
+#   enable: false
+#   manifest: /pwa/manifest.json
+#   apple_touch_icon: /pwa/apple-touch-icon.png
+#   favicon_32_32: /pwa/32.png
+#   favicon_16_16: /pwa/16.png
+#   mask_icon: /pwa/safari-pinned-tab.svg
 
-# Open graph meta tags
-# https://hexo.io/docs/helpers#open-graph
+# Open graph 元标签
+# https://developers.facebook.com/docs/sharing/webmasters/
 Open_Graph_meta:
   enable: true
   option:
@@ -1016,36 +918,38 @@ Open_Graph_meta:
     # fb_admins:
     # fb_app_id:
 
-# Structured Data
-# https://developers.google.com/search/docs/guides/intro-structured-data
-structured_data: true
-
-# Add the vendor prefixes to ensure compatibility
+# 添加厂商前缀以确保兼容性
 css_prefix: true
 
-# Inject
-# Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
+# 注入
+# 在头部 ('<head>' 标签之前) 和底部 ('<body>' 标签之前) 插入代码
+# 在头部 <head> 之前 和 底部 <body> 之前插入代码
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
 
-# CDN Settings
-# Don't modify the following settings unless you know how they work
+# CDN
+# 除非你知道它们如何工作，否则不要修改以下设置
+# 非必要请不要修改
+
 CDN:
-  # The CDN provider for internal and third-party scripts
-  # Options for both: local/jsdelivr/unpkg/cdnjs/custom
-  # Note: Dev version can only use 'local' for internal scripts
-  # Note: When setting third-party scripts to 'local', you need to install hexo-butterfly-extjs
+  # 主题内部 js 的 CDN 配置
+  # 选项: local/jsdelivr/unpkg/cdnjs/custom
+  # Dev 版本只能选择 (dev 版的主体只能设置为 local)
   internal_provider: local
+
+  # 第三方 js 的 CDN 配置
+  # 选项: local/jsdelivr/unpkg/cdnjs/custom
+  # 当设置为 local 时，你需要安装 hexo-butterfly-extjs
   third_party_provider: jsdelivr
 
-  # Add version number to url, true or false
-  version: false
+  # 在 URL 中添加版本号，true 或 false
+  version: true
 
-  # Custom format
-  # For example: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
+  # 自定义格式
+  # 例如: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
   custom_format:
 
   option:
@@ -1062,7 +966,6 @@ CDN:
     # canvas_fluttering_ribbon:
     # canvas_nest:
     # canvas_ribbon:
-    # chartjs:
     # click_heart:
     # clickShowText:
     # disqusjs:
@@ -1089,6 +992,7 @@ CDN:
     # medium_zoom:
     # mermaid:
     # meting_js:
+    # pangu:
     # prismjs_autoloader:
     # prismjs_js:
     # prismjs_lineNumber_js:
